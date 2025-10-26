@@ -50,3 +50,5 @@ temp/
 *.js
 *.js.map
 !*.spec.js
+
+/src/generated/prisma

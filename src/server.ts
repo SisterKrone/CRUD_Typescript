@@ -1,12 +1,14 @@
-import express, {Request, Response} from 'express';
+import "dotenv/config";
+import express from 'express';
+import cors from 'cors';
+import postRoutes from "./routes/postRoutes"
 
 const app = express();
+const PORT: Number = 3003;
 
+app.use(cors());
 app.use(express.json());
-const PORT:Number = 3000;
 
-app.get('/teste', (req: Request, res: Response)=>{
-    res.json({ message: "aeea"})
-})
+app.use("/", postRoutes)
 
-app.listen(PORT, ()=> { console.log(`Server on port ${PORT}`)});
+app.listen(PORT, () => { console.log(`Server on port ${PORT}`) });
