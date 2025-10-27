@@ -47,7 +47,7 @@ export async function deletePost(req: Request, res: Response) {
         const deletedPost = await prisma.post.delete({
             where: { id: id },
         });
-        res.status(200).json(deletePost);
+        res.status(200).json(deletedPost);
     } catch (err) {
         res.status(500).json({ message: "Erro ao excluir post" })
     }
